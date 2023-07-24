@@ -1,9 +1,9 @@
-const { request, response } = require( 'express' );
+const { request } = require( 'express' );
 const multer  = require( 'multer' );
 
 
 // Ruta de almacenamiento para los archivos subidos
-const PATH_STORAGE = `${ process.cwd() }/storage`;
+const PATH_STORAGE = `${ process.cwd() }/storage`;      // --> Se debe crear el directorio 'storage' en el root del proyecto
 
 // Configuración del almacenamiento de Multer
 const storage = multer.diskStorage({
