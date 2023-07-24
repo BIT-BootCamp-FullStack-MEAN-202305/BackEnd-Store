@@ -11,7 +11,9 @@ const storage = multer.diskStorage({
         // La función `destination` define la carpeta de destino para almacenar los archivos
         // En este caso, se utiliza `PATH_STORAGE` como carpeta de destino
         
-        cb( null, PATH_STORAGE) ;
+        console.log( PATH_STORAGE, file );
+
+        cb( null, PATH_STORAGE ) ;
     },
     filename( req = request, file, cb ) {
         // La función `filename` define el nombre del archivo en el servidor
@@ -19,6 +21,8 @@ const storage = multer.diskStorage({
 
         const ext = file.originalname.split(".").pop();
         const fileNameRandom = `image-${ Date.now() }.${ext}`;
+
+        console.log( fileNameRandom, file );
 
         cb( null, fileNameRandom );
     },
